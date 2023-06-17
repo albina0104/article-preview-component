@@ -8,6 +8,19 @@ main {
   background-color: white;
   position: relative;
   margin-top: rem(20px);
+
+  @include desktop {
+    max-width: rem(730px);
+  }
+}
+
+.preview-card {
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    flex-direction: row;
+  }
 }
 
 .preview-card__content {
@@ -18,12 +31,22 @@ main {
   width: 100%;
   height: rem(200px);
   object-fit: cover;
+
+  @include desktop {
+    width: 39%;
+    height: unset;
+    object-position: left;
+  }
 }
 
 .heading {
   color: $very-dark-grayish-blue;
   font-size: rem(16.5px);
   padding-bottom: rem(20px);
+
+  @include desktop {
+    font-size: rem(21px);
+  }
 }
 
 .preview-card__text {

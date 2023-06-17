@@ -12,6 +12,12 @@ $font: 'Manrope', sans-serif;
   @return $remValue;
 }
 
+@mixin desktop {
+  @media screen and (min-width: rem(870px)) {
+    @content;
+  }
+}
+
 @mixin rounded-img($size) {
   width: $size;
   height: $size;
