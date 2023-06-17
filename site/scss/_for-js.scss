@@ -1,0 +1,9 @@
+@use 'base' as *;
+
+.flex {
+  display: flex;
+}
+
+.padding-reduce {
+  padding-bottom: rem(12px);
+}

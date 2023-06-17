@@ -1,0 +1,49 @@
+@use 'sass:math';
+
+$very-dark-grayish-blue: hsl(217, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95%);
+
+$font: 'Manrope', sans-serif;
+
+@function rem($pxValue) {
+  $remValue: math.div($pxValue, 16px) * 1rem;
+  @return $remValue;
+}
+
+@mixin rounded-img($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin social-icon($width, $height, $image-url) {
+  width: $width;
+  height: $height;
+  background-image: url($image-url);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: $light-grayish-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
