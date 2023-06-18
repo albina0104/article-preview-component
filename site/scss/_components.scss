@@ -4,7 +4,6 @@ main {
   width: 90%;
   max-width: rem(327px);
   border-radius: rem(10px);
-  overflow: hidden;
   background-color: white;
   position: relative;
   margin-top: rem(20px);
@@ -31,11 +30,13 @@ main {
   width: 100%;
   height: rem(200px);
   object-fit: cover;
+  border-radius: rem(10px) rem(10px) 0 0;
 
   @include desktop {
     width: 39%;
     height: unset;
     object-position: left;
+    border-radius: rem(10px) 0 0 rem(10px);
   }
 }
 
@@ -87,18 +88,21 @@ main {
   font-size: rem(13px);
 }
 
-#author-block__share-btn {
+.author-block__share-btn {
   @include rounded-img(rem(30px));
 
   cursor: pointer;
   grid-area: share;
   border: none;
-  background-color: $light-grayish-blue;
-  z-index: 2;
+  z-index: 0;
+
+  @include desktop {
+    position: relative;
+  }
 
   & > img {
-    width: rem(15px);
-    height: rem(13px);
+    width: rem(30px);
+    height: rem(30px);
   }
 }
 
@@ -113,10 +117,32 @@ main {
   color: $grayish-blue;
   font-size: rem(12px);
   letter-spacing: rem(5px);
-  //display: flex;
   display: none;
   padding-left: rem(33px);
   align-items: center;
+  z-index: -1;
+  border-radius: 0 0 rem(10px) rem(10px);
+
+  @include desktop {
+    left: 50%;
+    right: unset;
+    bottom: 200%;
+    margin-left: rem(-124px);
+    width: rem(248px);
+    border-radius: rem(10px);
+    z-index: 1;
+
+    &::after {
+      top: 100%;
+      left: 50%;
+      content: '';
+      position: absolute;
+      margin-left: rem(-12px);
+      border-style: solid;
+      border-width: rem(12px);
+      border-color: $very-dark-grayish-blue transparent transparent transparent;
+    }
+  }
 
   & > *:first-child {
     margin-right: rem(21px);

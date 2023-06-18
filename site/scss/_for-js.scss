@@ -5,5 +5,7 @@
 }
 
 .padding-reduce {
-  padding-bottom: rem(12px);
+  @include mobile {
+    padding-bottom: rem(12px);
+  }
 }

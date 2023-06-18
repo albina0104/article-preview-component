@@ -18,6 +18,12 @@ $font: 'Manrope', sans-serif;
   }
 }
 
+@mixin mobile {
+  @media screen and (max-width: rem(869px)) {
+    @content;
+  }
+}
+
 @mixin rounded-img($size) {
   width: $size;
   height: $size;
