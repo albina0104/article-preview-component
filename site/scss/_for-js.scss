@@ -4,6 +4,10 @@
   display: flex;
 }
 
+.block {
+  display: block;
+}
+
 .padding-reduce {
   @include mobile {
     padding-bottom: rem(12px);
