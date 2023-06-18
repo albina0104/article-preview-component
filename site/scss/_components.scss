@@ -33,8 +33,7 @@ main {
   border-radius: rem(10px) rem(10px) 0 0;
 
   @include desktop {
-    width: 39%;
-    height: unset;
+    height: 100%;
     object-position: left;
     border-radius: rem(10px) 0 0 rem(10px);
   }
