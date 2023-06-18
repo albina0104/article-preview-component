@@ -85,6 +85,8 @@ Users should be able to:
   shareBtnImg.setAttribute('src', './images/icon-share-1.svg');
   ```
 
+- How to close a popup when clicking outside of it: [Close Div When Clicking Outside of It (medium.com)](https://medium.com/allenhwkim/close-div-when-clicking-outside-it-97255c20a221)
+
 ## Author
 
 - Frontend Mentor - [@albina0104](https://www.frontendmentor.io/profile/albina0104)
