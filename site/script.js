@@ -1,19 +1,29 @@
 const shareBtn = document.querySelector('.author-block__share-btn');
 const shareBtnImg = shareBtn.querySelector('img');
 const sharePanel = document.querySelector('.share-panel');
-const closeSharePanel = document.querySelector('.close-share-panel');
+const sharePanelClose = document.querySelector('.share-panel-close');
 const previewCardContent = document.querySelector('.preview-card__content');
 
 shareBtn.addEventListener('click', () => {
-  sharePanel.classList.add('flex');
-  previewCardContent.classList.add('padding-reduce');
-  shareBtnImg.setAttribute('src', './images/icon-share-2.svg');
-  closeSharePanel.classList.add('block');
+  if (sharePanel.classList.contains('flex')) {
+    closeSharePanel();
+  } else {
+    openSharePanel();
+  }
 });
 
-closeSharePanel.addEventListener('click', () => {
+sharePanelClose.addEventListener('click', closeSharePanel);
+
+function closeSharePanel() {
   sharePanel.classList.remove('flex');
   previewCardContent.classList.remove('padding-reduce');
   shareBtnImg.setAttribute('src', './images/icon-share-1.svg');
-  closeSharePanel.classList.remove('block');
-});
+  sharePanelClose.classList.remove('block');
+}
+
+function openSharePanel() {
+  sharePanel.classList.add('flex');
+  previewCardContent.classList.add('padding-reduce');
+  shareBtnImg.setAttribute('src', './images/icon-share-2.svg');
+  sharePanelClose.classList.add('block');
+}
